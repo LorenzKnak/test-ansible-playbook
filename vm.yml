@@ -15,10 +15,6 @@
         validate_certs: no
       register: session_response
 
-    - name: Print the result of login
-      debug:
-        msg: "output: PVE%3Atest@pam%3A65DE9E07%3A%3AjFjl1Ry+zGCjYNt07weawcUk4rS+lUI/hPegnTcuBlYXo2BHPdjtorAwbm0118y9EoIVQiBADem6/A5gSuYsPIaHH8gyMFOmORLVTvXOV2cWTAqMRvsgPOhMLa1pmzHChwSshzwcqIMq6eJGKXq1YaqpgbPNoAV+Uq+7M/zcaQbemObJp0amRLMzB4r71nyLWQyiaOL3IgFD9sdLXoVBDFGGpdBPRxSHcCXUZe2Mt9QCMNYBALKt6bAJutQCxDqC1nL93tBauxIW53a8BWQ1NRhqS5KfuAsApLgA3Q8Q51DHSSnp/n97XuwIcuC9tig/Bz3/wFzpBqNkCJiWGBPCKQ%3D%3D"
-
     - name: Create VM
       uri:
         url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
@@ -32,6 +28,7 @@
           name: 'dfasdf'
           ide2: 'local:iso/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso,media=cdrom'
           ostype: l26
+          vmid: {{ vmid }}
           scsihw: 'virtio-scsi-single'
           scsi0: 'local:32,format=qcow2,iothread=on'
           sockets: 1
