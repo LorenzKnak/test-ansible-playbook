@@ -15,17 +15,17 @@
           Content-Type: "application/json"
         body: 
           vmid: 150
-          name: dfasdf
-          ide2: local:iso/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso,media=cdrom
+          name: 'dfasdf'
+          ide2: 'local:iso/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso,media=cdrom'
           ostype: l26
-          scsihw: virtio-scsi-single
-          scsi0: local:32,format=qcow2,iothread=on
+          scsihw: 'virtio-scsi-single'
+          scsi0: 'local:32,format=qcow2,iothread=on'
           sockets: 1
           cores: 1
           numa: 0
-          cpu: x86-64-v2-AES
+          cpu: 'x86-64-v2-AES'
           memory: 2048
-          net0: virtio,bridge=vmbr0,firewall=1
+          net0: 'virtio,bridge=vmbr0,firewall=1'
         validate_certs: no
       register: vm_creation_result
 
