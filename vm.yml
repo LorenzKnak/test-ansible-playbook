@@ -11,6 +11,7 @@
         user: 'test@pam'
         password: 'test'
         force_basic_auth: yes
+        body_format: form-urlencoded
         headers:
           Content-Type: 'application/json'
         body: 
