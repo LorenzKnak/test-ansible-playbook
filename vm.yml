@@ -25,7 +25,7 @@
         method: POST
         headers:
           Content-Type: "application/json"
-          Cookie: "PVEAuthCookie={{ session_response }}"
+          Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
         body: 
           vmid: 150
           name: 'dfasdf'
