@@ -26,6 +26,7 @@
           onboot: 1
           boot: c
           disk: "local-lvm:32"
+        validate_certs: no
       register: vm_creation_result
 
     - debug:
