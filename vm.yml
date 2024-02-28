@@ -26,7 +26,7 @@
         body_format: json
         headers:
           Content-Type: "application/json"
-          Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
+          Cookie: "PVEAuthCookie='PVE:test@pam:65DE9966::cLWR+6o20PuxP+z2ldhh6FhOsEf0+I0FsvHtdgACoIARfUa9yUdX9TT9m5lRAbq+6WKAD6LqhM+SHuy76DEcQ6dVWZGey5qwtOONjEH0jZLnxH0sU+ek//HwTdw1ewd6AqoN8KsdDK9kPGJ46PL2q6NMX6iqnG8jdzYrsQ0j+PmdifFPiSXsPKP3qPRidQ1T781d+bfeIX+XKM/vmCC1sJKwqlhFCrv7IVM5Hm3qqkZoBJaj8LKT7cMcbf72tE6+CLIV3jwEhLR2+Ly3lL/IpVMWaD4bRWiAlpTZrDlI3QUDzSUjvZxepkmMrqujz1AlXWC4H3cyxxtFFWcaFVE18Q=='"
         body: 
           vmid: 150
           name: 'dfasdf'
