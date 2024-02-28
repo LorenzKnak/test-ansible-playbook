@@ -1,6 +1,6 @@
 ---
 - name: Create a Virtual Machine in Proxmox via API
-  hosts: localhost
+  hosts: all
   gather_facts: no
 
   tasks:
