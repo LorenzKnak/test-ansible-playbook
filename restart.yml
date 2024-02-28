@@ -1,0 +1,13 @@
+---
+- name: Reboot Host
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Run reboot
+      command: reboot
+      register: command_output
+
+    - name: Print the command output
+      debug:
+        msg: "Command output: {{ command_output.stdout }}"
