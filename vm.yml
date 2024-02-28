@@ -6,13 +6,13 @@
   tasks:
     - name: Create VM
       uri:
-        url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
+        url: 'https://10.1.0.254:8006/api2/json/nodes/pve01/qemu'
         method: POST
-        user: "test@pam"
-        password: "test"
+        user: 'test@pam'
+        password: 'test'
         force_basic_auth: yes
         headers:
-          Content-Type: "application/json"
+          Content-Type: 'application/json'
         body: 
           vmid: 150
           name: 'dfasdf'
