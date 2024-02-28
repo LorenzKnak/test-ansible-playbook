@@ -26,7 +26,8 @@
         body_format: form-urlencoded
         headers:
           #Content-Type: "application/json"
-          Cookie: "PVEAuthCookie=PVE%3Atest@pam%3A65DE9E07%3A%3AjFjl1Ry+zGCjYNt07weawcUk4rS+lUI/hPegnTcuBlYXo2BHPdjtorAwbm0118y9EoIVQiBADem6/A5gSuYsPIaHH8gyMFOmORLVTvXOV2cWTAqMRvsgPOhMLa1pmzHChwSshzwcqIMq6eJGKXq1YaqpgbPNoAV+Uq+7M/zcaQbemObJp0amRLMzB4r71nyLWQyiaOL3IgFD9sdLXoVBDFGGpdBPRxSHcCXUZe2Mt9QCMNYBALKt6bAJutQCxDqC1nL93tBauxIW53a8BWQ1NRhqS5KfuAsApLgA3Q8Q51DHSSnp/n97XuwIcuC9tig/Bz3/wFzpBqNkCJiWGBPCKQ%3D%3D"
+          CSRFPreventionToken: "{{ session_response.json.data.CSRFPreventionToken }}"
+          Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
         body: 
           vmid: 150
           name: 'dfasdf'
