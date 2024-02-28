@@ -1,4 +1,6 @@
-  hosts: localhost
+---
+- name: VM
+  hosts: all
   gather_facts: no
 
   tasks:
