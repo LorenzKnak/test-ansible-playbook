@@ -28,7 +28,7 @@
           name: 'dfasdf'
           ide2: 'local:iso/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_de-de.iso,media=cdrom'
           ostype: l26
-          vmid: {{ vmid }}
+          vmid: '{{ vmid }}'
           scsihw: 'virtio-scsi-single'
           scsi0: 'local:32,format=qcow2,iothread=on'
           sockets: 1
