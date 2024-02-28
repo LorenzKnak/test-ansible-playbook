@@ -26,7 +26,7 @@
         body_format: json
         headers:
           Content-Type: "application/json"
-          Authorization: "PVEAPIToken={{ session_response.json.data.ticket }}"
+          Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
         body: 
           vmid: 150
           name: 'dfasdf'
