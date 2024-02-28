@@ -15,7 +15,6 @@
         validate_certs: no
       register: session_response
 
-
     - name: Create VM
       uri:
         url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
