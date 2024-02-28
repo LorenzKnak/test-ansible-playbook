@@ -1,19 +1,30 @@
 ---
-- name: VM
-  hosts: all
+- name: Create a Virtual Machine in Proxmox via API
+  hosts: localhost
   gather_facts: no
 
   tasks:
+    - name: Authenticate and Create Session
+      uri:
+        url: "https://10.1.0.254:8006/api2/json/access/ticket"
+        method: POST
+        body_format: json
+        body:
+          username: "test@pam"
+          password: "test"
+        validate_certs: no
+      register: session_response
+
+    - set_fact:
+        csrf_token: "{{ session_response.cookies['PVEAuthCookie'].value }}"
+
     - name: Create VM
       uri:
-        url: 'https://10.1.0.254:8006/api2/json/nodes/pve01/qemu'
+        url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
         method: POST
-        user: 'test@pam'
-        password: 'test'
-        force_basic_auth: yes
-        body_format: form-urlencoded
         headers:
-          Content-Type: 'application/json'
+          Content-Type: "application/json"
+          Cookie: "PVEAuthCookie={{ csrf_token }}"
         body: 
           vmid: 150
           name: 'dfasdf'
