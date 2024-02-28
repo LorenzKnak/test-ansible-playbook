@@ -23,6 +23,7 @@
       uri:
         url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
         method: POST
+        body_format: json
         headers:
           Content-Type: "application/json"
           Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
