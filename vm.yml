@@ -15,8 +15,6 @@
         validate_certs: no
       register: session_response
 
-    - set_fact:
-        csrf_token: "{{ session_response.cookies['PVEAuthCookie'].value }}"
 
     - name: Create VM
       uri:
@@ -24,7 +22,7 @@
         method: POST
         headers:
           Content-Type: "application/json"
-          Cookie: "PVEAuthCookie={{ csrf_token }}"
+          Cookie: "PVEAuthCookie={{ login.set_cookie }}"
         body: 
           vmid: 150
           name: 'dfasdf'
