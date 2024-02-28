@@ -1,0 +1,13 @@
+---
+- name: Ping
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Run Ping
+      command: 'echo Pong'
+      register: command_output
+
+    - name: Print the command output
+      debug:
+        msg: "Command output: {{ command_output.stdout }}"
