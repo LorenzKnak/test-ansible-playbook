@@ -8,7 +8,7 @@
       uri:
         url: "https://10.1.0.254:8006/api2/json/access/ticket"
         method: POST
-        body_format: json
+        body_format: form-urlencoded
         body:
           username: "test@pam"
           password: "test"
@@ -23,7 +23,7 @@
       uri:
         url: "https://10.1.0.254:8006/api2/json/nodes/pve01/qemu"
         method: POST
-        body_format: json
+        body_format: form-urlencoded
         headers:
           Content-Type: "application/json"
           Cookie: "PVEAuthCookie={{ session_response.json.data.ticket }}"
